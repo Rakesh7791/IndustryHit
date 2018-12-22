@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Industry Hit</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="ok" translatable="false">OK</string>
+
+    <string name="error_intenet_unavailable" translatable="false">Internet not available, Cross check your internet connectivity and try again</string>
+    <string name="retry" translatable="false">Retry</string>
+    <string name="dismiss" translatable="false">Dismiss</string>
+    <string name="request_failed" translatable="false">Request Failed</string>
+    <string name="request_send" translatable="false">Request Send</string>
+</resources>

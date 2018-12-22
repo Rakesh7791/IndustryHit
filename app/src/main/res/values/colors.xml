@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+
+    <color name="pink">#FF69B4</color>
+    <color name="progress_color">#a8cf42</color>
+    <color name="white">#FFFFFF</color>
+    <color name="rect_orange_color">#FB641B</color>
+    <color name="black">#000000</color>
+    <color name="actionbar_bg">#2AA2DA</color>
+    <color name="visitor_switch_select_color">#df1d24</color>
+    <color name="indicator_selected">#b0abab</color>
+    <color name="indicator_not_selected">#e6e6e6</color>
+
+    <color name="grey">#dfe3e5</color>
+    <color name="darkgrey">#7b8485</color>
+    <color name="sub_category_tab_frag_bg">#E8E8E8</color>
+    <color name="product_name_bg_color">#878787</color>
+    <color name="custom_options_bg">#bababa</color>
+    <color name="product_details_bg_color">#f8f5ee</color>
+    <color name="transfer_money_bank_details_bg">#dedede</color>
+    <color name="wallet_bg">#df1d24</color>
+    <color name="best_deals_bg">#f8f5ee</color>
+
+
+
+    <color name="yellow">#FFBF00</color>
+    <color name="blue">#1857f7</color>
+    <color name="brown">#945454</color>
+    <color name="grey_1">#808080</color>
+    <color name="red">#ff0000</color>
+    <color name="filter_by_list_bg">#f5f5f5</color>
+    <color name="filter_by_line_seperator">#d4d5d9</color>
+    <color name="clear_all_bg">#686a78</color>
+    <color name="sub_categories_tab_bg_color">#E8E8E8</color>
+    <color name="product_det_save_to_wishlist_btn_bh">#525252</color>
+    <color name="restaurant_text_background">#faf6f1</color>
+    <color name="green">#53a828</color>
+    <color name="Yellow">#ffd500</color>
+    <color name="Lavender">#ce64d4</color>
+    <color name="Orange">#eb6703</color>
+    <color name="Purple">#ef3dff</color>
+
+    <color name="notification_bg">#de1f1f</color>
+
+    <color name="charges_row_1_color">#f5f4eb</color>
+    <color name="charges_row_2_color">#ffffff</color>
+
+
+    <color name="order_complete">#5ACA5A</color>
+    <color name="order_pending">#F8AF2E</color>
+    <color name="order_closed">#DD4C4C</color>
+    <color name="order_default">#4F9EE7</color>
+    <color name="order_placed">#00A0E3</color>
+    <color name="order_accpeted">#Ff6600</color>
+    <color name="order_canceled">#Ff0000</color>
+    <color name="order_delivered">#006400</color>
+    <color name="paymnet_received">#000000</color>
+    <color name="seller_canceled">#Ff0000</color>
+</resources>
