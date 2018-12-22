@@ -199,7 +199,7 @@ public class VolleyConnectionGET {
 
     private String getRequestUrl() {
 
-            return VersionControls.getVersionControls(mContext).getUrl() + mMethodName;
+            return VersionControls.getVersionControls(mContext).getTelugulUrl() + mMethodName;
 
     }
 

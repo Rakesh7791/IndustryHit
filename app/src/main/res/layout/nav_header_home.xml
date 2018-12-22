@@ -16,9 +16,10 @@
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
        android:layout_gravity="center_horizontal"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@drawable/app_logo" />
 
     <LinearLayout
+        android:id="@+id/language_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_5dp"
@@ -28,6 +29,7 @@
 
 
     <com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView
+        android:id="@+id/selected_language"
         android:layout_width="wrap_content"
         android:layout_weight="1"
         android:layout_height="match_parent"

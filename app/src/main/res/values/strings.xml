@@ -15,4 +15,40 @@
     <string name="dismiss" translatable="false">Dismiss</string>
     <string name="request_failed" translatable="false">Request Failed</string>
     <string name="request_send" translatable="false">Request Send</string>
+
+    <string name="home">Home</string>
+    <string name="news">News</string>
+    <string name="reviews">Reviews</string>
+    <string name="gossips">Gossips</string>
+    <string name="exclusives">Exclusives</string>
+    <string name="boxoffice">Boxoffice</string>
+    <string name="interviews">Interviews</string>
+    <string name="galleries">Galleries</string>
+    <string name="videos">Videos</string>
+    <string name="movies">Movies</string>
+    <string name="music">Music</string>
+    <string name="real_and_real">Real &amp; Real</string>
+    <string name="shooting_spot_updates">Shooting Spot Updates</string>
+    <string name="trade_reports">Trade Reports</string>
+    <string name="collections">Collections</string>
+    <string name="schedule">Schedule</string>
+    <string name="events">Events</string>
+    <string name="stills">Stills</string>
+    <string name="wallpapers">Wallpapers</string>
+    <string name="heroes">Heroes</string>
+    <string name="heroines">Heroines</string>
+    <string name="models">Models</string>
+    <string name="others">Others</string>
+    <string name="trailers">Trailers</string>
+    <string name="songs">Songs</string>
+    <string name="pressmeets">Pressmeets</string>
+    <string name="select_channel">Select Channel</string>
+    <string name="cancel">Cancel</string>
+    <string name="telugu">Telugu</string>
+    <string name="english">English</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

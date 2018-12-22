@@ -24,10 +24,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         
         
     }
-
+    protected abstract int setLayoutResuourse();
+    protected abstract void initGUI();
     protected abstract void initData();
 
-    protected abstract void initGUI();
 
-    protected abstract int setLayoutResuourse();
+
 }

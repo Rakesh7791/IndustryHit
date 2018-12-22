@@ -182,7 +182,14 @@ public class VolleyConnection {
     }
 
     private String getRequestUrl() {
-        return VersionControls.getVersionControls(mContext).getUrl() + mMethodName;
+//        if(is_selectedTelugu) {
+//            return VersionControls.getVersionControls(mContext).getTelugulUrl() + mMethodName;
+//        }else{
+//            return VersionControls.getVersionControls(mContext).getEnglishUrl() + mMethodName;
+//        }
+
+                    return VersionControls.getVersionControls(mContext).getEnglishUrl() + mMethodName;
+
     }
 
 

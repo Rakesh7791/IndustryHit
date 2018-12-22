@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -1439,5 +1440,18 @@ public class GlobalMethods {
         SimpleDateFormat smdf = new SimpleDateFormat("hh:mm aa");
         Date d = new Date(System.currentTimeMillis());
         return smdf.format(d);
+    }
+
+    public static void setSelectedLanguage(Context context, int selection_position) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(Constants.MY_PREFERENCE_NAME, context.MODE_PRIVATE).edit();
+        editor.putInt(Constants.LANGUAGE_SELECTION, selection_position);
+
+        editor.apply();
+    }
+
+    public static int getSelectedLanguage(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(Constants.MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
+        return prefs.getInt(Constants.LANGUAGE_SELECTION, Integer.parseInt(null));
+
     }
 }

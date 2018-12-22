@@ -8,10 +8,9 @@ public class VersionControls {
 
     private static VersionControls instance = null;
 
-    private String Url = URLS.PRE_Production.getURL();
-    private String RMAUrl = RMAURLS.PRE_Production.getRMAURLS();
-    private String PAYMENT_BASE_URL = PaymentGateWayURLS.PRE_Production
-            .getPayment_base_url();
+    private String englishUrl = EnglishURL.PRE_Production.getURL();
+    private String telugulUrl = TelugulUrl.PRE_Production.getRMAURLS();
+
 
     private int SyncFreq = 5;
 
@@ -25,15 +24,24 @@ public class VersionControls {
 
     }
 
-    public String getRMAUrl() {
-        return RMAUrl;
+    public String getTelugulUrl() {
+        return telugulUrl;
     }
 
-    public void setRMAUrl(String RMAUrl) {
-        this.RMAUrl = RMAUrl;
+    public void setTelugulUrl(String telugulUrl) {
+        this.telugulUrl = telugulUrl;
     }
 
-    static enum URLS {
+    public String getEnglishUrl() {
+        return englishUrl;
+    }
+
+    public void setEnglishUrl(String englishUrl) {
+        this.englishUrl = englishUrl;
+    }
+
+
+    static enum EnglishURL {
         //        http://35.187.232.245/
         //http://35.186.151.92/ changed to http://35.187.232.245/ on 16-12-2017
         //35.186.157.60        chharodev.bob.bt
@@ -52,7 +60,7 @@ public class VersionControls {
 //        ?amount=1&currency=inr&quoteId=3423
         private String URL;
 
-        URLS(String URL) {
+        EnglishURL(String URL) {
             this.URL = URL;
         }
 
@@ -67,7 +75,7 @@ public class VersionControls {
     }
 
 
-    static enum RMAURLS {
+    static enum TelugulUrl {
         //        http://35.187.232.245/
         //http://35.186.151.92/ changed to http://35.187.232.245/ on 16-12-2017
         Development(
@@ -79,7 +87,7 @@ public class VersionControls {
 //        ?amount=1&currency=inr&quoteId=3423
         private String RMAURLS;
 
-        RMAURLS(String URL) {
+        TelugulUrl(String URL) {
             this.RMAURLS = URL;
         }
 
@@ -124,13 +132,7 @@ public class VersionControls {
 
     }
 
-    public String getUrl() {
-        return Url;
-    }
 
-    public void setUrl(String url) {
-        Url = url;
-    }
 
     /**
      * @return the syncFreq
@@ -147,13 +149,7 @@ public class VersionControls {
     }
 
 
-    public String getPAYMENT_BASE_URL() {
-        return PAYMENT_BASE_URL;
-    }
 
-    public void setPAYMENT_BASE_URL(String PAYMENT_BASE_URL) {
-        this.PAYMENT_BASE_URL = PAYMENT_BASE_URL;
-    }
 
 
 }

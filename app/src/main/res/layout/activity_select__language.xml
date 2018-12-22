@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.selectlanguage.Select_LanguageAct">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/channel_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbar">
+
+        <com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView
+            android:id="@+id/telugu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_view_style"
+            android:padding="@dimen/padding_10dp"
+            android:text="@string/telugu"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView
+            android:id="@+id/english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_view_style"
+            android:padding="@dimen/padding_10dp"
+            android:text="@string/english"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+    </LinearLayout>
+</RelativeLayout>
