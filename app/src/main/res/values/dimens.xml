@@ -214,4 +214,7 @@
 
     <dimen name="nav_drawer_arro_height">24dp</dimen>
     <dimen name="nav_drawer_arro_width">24dp</dimen>
+
+    <dimen name="nav_image_width">128dp</dimen>
+    <dimen name="nav_image_height">128dp</dimen>
 </resources>

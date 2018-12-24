@@ -6,7 +6,10 @@ package com.industryhit.industryhit.webaccess;
 
 public class WebServiceList {
 
+    public final static String CATEGORIES_LIST_LABEL="categories";
 
+
+    public final static String CATEGORIES_LIST="wp-json/wp/v2/categories";
 
 }
 

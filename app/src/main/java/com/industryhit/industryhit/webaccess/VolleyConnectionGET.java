@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.industryhit.industryhit.R;
 import com.industryhit.industryhit.presentation.globalutils.constants.ApplicationConstant;
+import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
 import com.industryhit.industryhit.presentation.globalutils.constants.VersionControls;
 import com.industryhit.industryhit.presentation.globalutils.singleton.SingletonClass;
 
@@ -176,20 +177,21 @@ public class VolleyConnectionGET {
                 return headers;
             }
 
-//            @Override
-//            protected Map<String, String> getParams() {
-//                Log.d(ApplicationConstant.TAG, "getParams: ");
-//                Map<String, String> postParams = new HashMap<>();
-//                //postParams.put("sessionId", ApplicationSingleton.getInstance().getSessionId());
-//                switch (mMethodName) {
-//
-//
-//                }
-//
-//
-//                Log.d(ApplicationConstant.TAG, "Post Request Params: " + postParams);
-//                return postParams;
-//            }
+            @Override
+            protected Map<String, String> getParams() {
+                Log.d(ApplicationConstant.TAG, "getParams: ");
+                Map<String, String> postParams = new HashMap<>();
+                //postParams.put("sessionId", ApplicationSingleton.getInstance().getSessionId());
+                switch (mMethodName) {
+
+
+
+                }
+
+
+                Log.d(ApplicationConstant.TAG, "Post Request Params: " + postParams);
+                return postParams;
+            }
         };
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS * 30, 0,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
@@ -198,8 +200,12 @@ public class VolleyConnectionGET {
     }
 
     private String getRequestUrl() {
+        if(GlobalMethods.getSelectedLanguage(mContext)==1) {
 
             return VersionControls.getVersionControls(mContext).getTelugulUrl() + mMethodName;
+        }else{
+            return VersionControls.getVersionControls(mContext).getEnglishUrl() + mMethodName;
+        }
 
     }
 
@@ -212,8 +218,8 @@ public class VolleyConnectionGET {
     private String getNewMethodName(String methodName) {
         switch (methodName) {
 
-//            case WebServiceList.GET_SAMPLE_TYPES_LABLE:
-//                return WebServiceList.CHOFFICER_DIAGNOSTIC_OFFICER_GET_SAMPLE_TYPES;
+            case WebServiceList.CATEGORIES_LIST_LABEL:
+                return WebServiceList.CATEGORIES_LIST;
 
 
 

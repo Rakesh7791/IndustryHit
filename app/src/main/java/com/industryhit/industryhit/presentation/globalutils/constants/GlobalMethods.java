@@ -1451,7 +1451,7 @@ public class GlobalMethods {
 
     public static int getSelectedLanguage(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(Constants.MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
-        return prefs.getInt(Constants.LANGUAGE_SELECTION, Integer.parseInt(null));
+        return prefs.getInt(Constants.LANGUAGE_SELECTION, 1);
 
     }
 }

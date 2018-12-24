@@ -31,6 +31,7 @@ public class Select_LanguageAct extends BaseActivity {
         ((CustomTextView)findViewById(R.id.cancel)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                GlobalMethods.callBackWordActivityForResult(Select_LanguageAct.this,null,100,true);
 
             }
         });
@@ -55,12 +56,15 @@ public class Select_LanguageAct extends BaseActivity {
     private void updateLanguage(String selected_Language) {
         if (selected_Language.equalsIgnoreCase(getResources().getString(R.string.telugu))){
 
-            GlobalMethods.setSelectedLanguage(Select_LanguageAct.this,0);
-        }else {
             GlobalMethods.setSelectedLanguage(Select_LanguageAct.this,1);
+        }else {
+            GlobalMethods.setSelectedLanguage(Select_LanguageAct.this,2);
         }
 
-        GlobalMethods.callForWordActivity(Select_LanguageAct.this,HomeActivity.class,null,true,true);
+      //  GlobalMethods.callForWordActivity(Select_LanguageAct.this,HomeActivity.class,null,true,true);
+        Bundle bundle=new Bundle();
+        bundle.putString("selectedLangualge",selected_Language);
+        GlobalMethods.callBackWordActivityForResult(Select_LanguageAct.this,bundle,100,true);
 
     }
 

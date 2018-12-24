@@ -18,7 +18,7 @@
 
         <com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView
             android:id="@+id/telugu"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/text_view_style"
             android:padding="@dimen/padding_10dp"
@@ -31,7 +31,7 @@
 
         <com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView
             android:id="@+id/english"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/text_view_style"
             android:padding="@dimen/padding_10dp"

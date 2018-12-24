@@ -16,21 +16,14 @@
 
         <com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
             style="@style/text_view_style"
             android:text="@string/select_channel"
             android:textColor="@color/white"/>
 
 
-        <com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            style="@style/text_view_style"
-            android:text="@string/select_channel"
-            android:textColor="@color/white"/>
+
         <com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView
             android:id="@+id/cancel"
             android:layout_width="0dp"

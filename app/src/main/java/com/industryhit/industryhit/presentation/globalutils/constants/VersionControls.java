@@ -52,10 +52,11 @@ public class VersionControls {
 
 
         Development(
-                "http://35.200.150.70/"), Staging(
-                "http://35.200.134.211/"), PRE_Production(
-                "http://35.200.200.118/"),Production(
-                "https://chharouat.bob.bt/");
+                "http://industryhit.com/t/"), Staging(
+                "http://industryhit.com/t/"), PRE_Production(
+                "http://industryhit.com/t/"), Production(
+                "http://industryhit.com/t/");
+
         //
 //        ?amount=1&currency=inr&quoteId=3423
         private String URL;
@@ -79,10 +80,10 @@ public class VersionControls {
         //        http://35.187.232.245/
         //http://35.186.151.92/ changed to http://35.187.232.245/ on 16-12-2017
         Development(
-                "http://uatbfssecure.rma.org.bt:8080/"), Staging(
-                "http://uatbfssecure.rma.org.bt:8080/"),PRE_Production(
-                "https://bfssecure.rma.org.bt/"), Production(
-                "https://bfssecure.rma.org.bt/");
+                "http://telugu.industryhit.com/"), Staging(
+                "http://telugu.industryhit.com/"),PRE_Production(
+                "http://telugu.industryhit.com/"), Production(
+                "http://telugu.industryhit.com/");
         //
 //        ?amount=1&currency=inr&quoteId=3423
         private String RMAURLS;
@@ -105,10 +106,10 @@ public class VersionControls {
     //http://172.16.0.135:1224/#/dashboard/ --old url
     static enum PaymentGateWayURLS {
         Development(
-                "http://35.200.150.70/"), Staging(
-                "http://35.200.134.211/"), PRE_Production(
-                "http://35.200.200.118/"), Production(
-                "https://chharouat.bob.bt/");
+                "http://industryhit.com/t/"), Staging(
+                "http://industryhit.com/t/"), PRE_Production(
+                "http://industryhit.com/t/"), Production(
+                "http://industryhit.com/t/");
 
 
         //  Log.e("load 11-", s_URL);

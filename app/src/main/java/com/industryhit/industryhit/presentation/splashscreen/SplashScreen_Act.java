@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import com.industryhit.industryhit.R;
 import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
 import com.industryhit.industryhit.presentation.home.activity.HomeActivity;
+import com.industryhit.industryhit.presentation.home.activity.NewHomeActivity;
 import com.industryhit.industryhit.presentation.login.activity.BaseActivity;
 
 public class SplashScreen_Act extends BaseActivity {
@@ -18,6 +19,7 @@ public class SplashScreen_Act extends BaseActivity {
 
     @Override
     protected int setLayoutResuourse() {
+        setTheme(R.style.SplashTheme);
         return R.layout.activity_splash_screen;
     }
     @Override
@@ -31,6 +33,7 @@ public class SplashScreen_Act extends BaseActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+
     }
 
 
@@ -42,7 +45,7 @@ public class SplashScreen_Act extends BaseActivity {
             @Override
             public void run() {
 
-                GlobalMethods.callForWordActivity(SplashScreen_Act.this,HomeActivity.class,null,true,true);
+                GlobalMethods.callForWordActivity(SplashScreen_Act.this,NewHomeActivity.class,null,true,true);
             }
         }, SPLASH_TIME_OUT);
     }
