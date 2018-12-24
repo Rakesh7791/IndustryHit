@@ -1,6 +1,7 @@
 package com.industryhit.industryhit.presentation.home.activity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
@@ -46,6 +47,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
     private MaterialMenuDrawable mToolbarMorphDrawable;
+    public ProgressDialog progressDialog;
 
     @Override
     protected int setLayoutResuourse() {
@@ -79,6 +81,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     }
 
     private void callCategoriesService() {
+        progressDialog = GlobalMethods.showProgress(NewHomeActivity.this);
         new VolleyConnectionGET(NewHomeActivity.this, this).execute(WebServiceList.CATEGORIES_LIST_LABEL);
 
     }
@@ -178,12 +181,12 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
 
     @Override
     public void onResponse(String response, String methodName) {
-        Log.e("", "methodName");
+     //   Log.e("", "methodName");
         final Gson gson = new Gson();
 
         if (methodName.equalsIgnoreCase(WebServiceList.CATEGORIES_LIST_LABEL)) {
-            Log.e("response", response);
-
+       //     Log.e("response", response);
+            GlobalMethods.hideProgress(progressDialog);
             if (!response.equalsIgnoreCase("")) {
                 if (GlobalMethods.isValidJsonArray(response)) {
 
@@ -203,7 +206,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
         }
     }
 
-    private void addCategoryList(List<CategoryList_Data> categoryList_data) {
+    private void addCategoryList(final List<CategoryList_Data> categoryList_data) {
         ((LinearLayout) findViewById(R.id.category_layout)).removeAllViews();
         for (int i=0;i<categoryList_data.size();i++){
             View view = getLayoutInflater().inflate(R.layout.category_item_layout, ((LinearLayout) findViewById(R.id.category_layout)), false);
@@ -212,10 +215,12 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
                 category_name.setText(categoryList_data.get(i).getName());
             }
 
+            final int final_I = i;
             category_name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
+                    callCategoryActivity(categoryList_data.get(final_I).getId());
                 }
             });
 
@@ -223,5 +228,12 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
             ((LinearLayout) findViewById(R.id.category_layout)).addView(view);
 
         }
+    }
+
+    private void callCategoryActivity(int id) {
+
+        Bundle bundle=new Bundle();
+        bundle.putInt("category_Id",id);
+        GlobalMethods.callForWordActivity(NewHomeActivity.this,CategoryActivity.class,bundle,true,true);
     }
 }
