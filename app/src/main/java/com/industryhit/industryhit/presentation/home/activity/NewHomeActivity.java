@@ -209,17 +209,16 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     private void addCategoryList(final List<CategoryList_Data> categoryList_data) {
         ((LinearLayout) findViewById(R.id.category_layout)).removeAllViews();
         for (int i=0;i<categoryList_data.size();i++){
-            View view = getLayoutInflater().inflate(R.layout.category_item_layout, ((LinearLayout) findViewById(R.id.category_layout)), false);
+            final View view = getLayoutInflater().inflate(R.layout.category_item_layout, ((LinearLayout) findViewById(R.id.category_layout)), false);
             CustomTextView category_name = view.findViewById(R.id.category_name);
             if (GlobalMethods.isNull(categoryList_data.get(i).getName())){
                 category_name.setText(categoryList_data.get(i).getName());
             }
 
-            final int final_I = i;
             category_name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    callCategoryActivity(categoryList_data.get(final_I).getName(),categoryList_data.get(final_I).getId());
+                    callCategoryActivity(categoryList_data.get((Integer) view.getTag()).getName(),categoryList_data.get((Integer) view.getTag()).getId());
 
                 }
             });

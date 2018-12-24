@@ -46,11 +46,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
             if (GlobalMethods.isNull(categoryData.get(i).getTitle().getRendered())){
                 holder.title.setText(categoryData.get(i).getTitle().getRendered());
             }
-            if (GlobalMethods.isNull(categoryData.get(i).getContent().getRendered())){
-              //  holder.content.setText(categoryData.get(i).getContent().getRendered());
-                holder.content.setText(Html.fromHtml(Html.fromHtml(categoryData.get(i).getContent().getRendered()).toString()));
 
-            }
+//            if (GlobalMethods.isNull(categoryData.get(i).getContent().getRendered())){
+//                holder.content.setText(Html.fromHtml(Html.fromHtml(categoryData.get(i).getContent().getRendered()).toString()));
+//            }
 
 
 
