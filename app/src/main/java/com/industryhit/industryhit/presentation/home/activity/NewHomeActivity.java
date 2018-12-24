@@ -220,7 +220,9 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
                 @Override
                 public void onClick(View v) {
 
-                    callCategoryActivity(categoryList_data.get(final_I).getId());
+                 //   callCategoryActivity(categoryList_data.get(final_I).getId());
+                    callCategoryActivity(categoryList_data.get(final_I).getName(),categoryList_data.get(final_I).getId());
+
                 }
             });
 
@@ -230,10 +232,12 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
         }
     }
 
-    private void callCategoryActivity(int id) {
+    private void callCategoryActivity(String name,int id) {
 
         Bundle bundle=new Bundle();
-        bundle.putInt("category_Id",id);
-        GlobalMethods.callForWordActivity(NewHomeActivity.this,CategoryActivity.class,bundle,true,true);
+        bundle.putInt("category_id",id);
+        bundle.putString("category_name",name);
+
+        GlobalMethods.callForWordActivity(NewHomeActivity.this,CategoryActivity.class,bundle,false,true);
     }
 }

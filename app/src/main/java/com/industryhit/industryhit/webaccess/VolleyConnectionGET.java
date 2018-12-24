@@ -182,9 +182,15 @@ public class VolleyConnectionGET {
                 Log.d(ApplicationConstant.TAG, "getParams: ");
                 Map<String, String> postParams = new HashMap<>();
                 //postParams.put("sessionId", ApplicationSingleton.getInstance().getSessionId());
-                switch (mMethodName) {
+                try {
+                    switch (mMethodName) {
 
-
+//                        case WebServiceList.POST_CATEGORIES_LABEL:
+//                            postParams.put("categories=", params[1]);
+//
+//                            break;
+                    }
+                }catch (Exception e){
 
                 }
 
@@ -201,10 +207,26 @@ public class VolleyConnectionGET {
 
     private String getRequestUrl() {
         if(GlobalMethods.getSelectedLanguage(mContext)==1) {
+            if (mMethodName.equalsIgnoreCase(WebServiceList.POST_CATEGORIES)){
+                mMethodName+=mCurrentRequestParams[1];
+                return VersionControls.getVersionControls(mContext).getTelugulUrl() + mMethodName;
 
-            return VersionControls.getVersionControls(mContext).getTelugulUrl() + mMethodName;
+            }else {
+                return VersionControls.getVersionControls(mContext).getTelugulUrl() + mMethodName;
+
+            }
+          //  return VersionControls.getVersionControls(mContext).getTelugulUrl() + mMethodName;
         }else{
-            return VersionControls.getVersionControls(mContext).getEnglishUrl() + mMethodName;
+            if (mMethodName.equalsIgnoreCase(WebServiceList.POST_CATEGORIES)){
+                mMethodName+=mCurrentRequestParams[1];
+                return VersionControls.getVersionControls(mContext).getEnglishUrl() + mMethodName;
+
+            }else {
+                return VersionControls.getVersionControls(mContext).getEnglishUrl() + mMethodName;
+
+            }
+           // return VersionControls.getVersionControls(mContext).getEnglishUrl() + mMethodName;
+
         }
 
     }
@@ -221,11 +243,17 @@ public class VolleyConnectionGET {
             case WebServiceList.CATEGORIES_LIST_LABEL:
                 return WebServiceList.CATEGORIES_LIST;
 
+            case WebServiceList.POST_CATEGORIES_LABEL:
+                return WebServiceList.POST_CATEGORIES;
+
 
 
         }
         return methodName;
     }
+
+
+
 
 //    private void getSessionId() {
 //        Log.d(ApplicationConstant.TAG, "getSessionId");
@@ -283,4 +311,6 @@ public class VolleyConnectionGET {
         }
         return false;
     }
+
+
 }

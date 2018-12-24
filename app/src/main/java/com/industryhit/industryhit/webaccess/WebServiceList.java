@@ -9,7 +9,7 @@ public class WebServiceList {
     public final static String CATEGORIES_LIST_LABEL="categories";
     public final static String CATEGORIES_LIST="wp-json/wp/v2/categories";
 
-    public final static String POST_CATEGORIES_LABEL="posts?categories=";
+    public final static String POST_CATEGORIES_LABEL="post_categories";
     public final static String POST_CATEGORIES="wp-json/wp/v2/posts?categories=";
 
 
