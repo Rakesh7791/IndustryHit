@@ -170,6 +170,5 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     @Override
     public void onResponse(String response, String methodName) {
         Log.e("","methodName");
-
     }
 }
