@@ -19,7 +19,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.industryhit.industryhit.R;
+import com.industryhit.industryhit.businesslogic.CategoryList_Data;
 import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView;
 import com.industryhit.industryhit.presentation.login.activity.BaseActivity;
@@ -28,10 +31,14 @@ import com.industryhit.industryhit.webaccess.OnVolleyResponseListener;
 import com.industryhit.industryhit.webaccess.VolleyConnectionGET;
 import com.industryhit.industryhit.webaccess.WebServiceList;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
-public class NewHomeActivity extends BaseActivity implements OnVolleyResponseListener{
-
+public class NewHomeActivity extends BaseActivity implements OnVolleyResponseListener {
 
 
     DrawerLayout mDrawerLayout;
@@ -39,6 +46,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
     private MaterialMenuDrawable mToolbarMorphDrawable;
+
     @Override
     protected int setLayoutResuourse() {
         return R.layout.activity_new_home;
@@ -52,7 +60,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     }
 
     private void actionEvents() {
-        ((LinearLayout)findViewById(R.id.language_layout)).setOnClickListener(new View.OnClickListener() {
+        ((LinearLayout) findViewById(R.id.language_layout)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 callSelectLanguageAct();
@@ -61,7 +69,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     }
 
     private void callSelectLanguageAct() {
-        GlobalMethods.callForWordActivityForResult(NewHomeActivity.this, Select_LanguageAct.class,null,100,true);
+        GlobalMethods.callForWordActivityForResult(NewHomeActivity.this, Select_LanguageAct.class, null, 100, true);
     }
 
     @Override
@@ -71,7 +79,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     }
 
     private void callCategoriesService() {
-        new VolleyConnectionGET(NewHomeActivity.this,this).execute(WebServiceList.CATEGORIES_LIST_LABEL);
+        new VolleyConnectionGET(NewHomeActivity.this, this).execute(WebServiceList.CATEGORIES_LIST_LABEL);
 
     }
 
@@ -153,10 +161,11 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
         switch (requestCode) {
             case (100):
                 if (resultCode == Activity.RESULT_OK) {
-                    Bundle bundle=data.getExtras();
-                    if(bundle!=null){
-                        if(bundle.containsKey("selectedLangualge")){
-                            ((CustomTextView)findViewById(R.id.selected_language)).setText(bundle.getString("selectedLangualge"));
+                    Bundle bundle = data.getExtras();
+                    if (bundle != null) {
+                        if (bundle.containsKey("selectedLangualge")) {
+                            callCategoriesService();
+                            ((CustomTextView) findViewById(R.id.selected_language)).setText(bundle.getString("selectedLangualge"));
                         }
 
                     }
@@ -169,6 +178,43 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
 
     @Override
     public void onResponse(String response, String methodName) {
-        Log.e("","methodName");
+        Log.e("", "methodName");
+        final Gson gson = new Gson();
+
+        if (methodName.equalsIgnoreCase(WebServiceList.CATEGORIES_LIST_LABEL)) {
+            Log.e("response", response);
+
+            if (!response.equalsIgnoreCase("")) {
+                if (GlobalMethods.isValidJsonArray(response)) {
+
+                    List<CategoryList_Data> categoryList_data;
+                    Type listType = new TypeToken<List<CategoryList_Data>>() {
+                    }.getType();
+                    categoryList_data= new Gson().fromJson(response, listType);
+
+                    if (categoryList_data!=null&&categoryList_data.size()>0){
+
+                        addCategoryList(categoryList_data);
+                    }
+
+
+                }
+            }
+
+        }
+    }
+
+    private void addCategoryList(List<CategoryList_Data> categoryList_data) {
+
+        for (int i=0;i<categoryList_data.size();i++){
+            View view = getLayoutInflater().inflate(R.layout.category_item_layout, ((LinearLayout) findViewById(R.id.category_layout)), false);
+            CustomTextView category_name = view.findViewById(R.id.category_name);
+            if (GlobalMethods.isNull(categoryList_data.get(i).getName())){
+                category_name.setText(categoryList_data.get(i).getName());
+            }
+             view.setTag(i);
+            ((LinearLayout) findViewById(R.id.category_layout)).addView(view);
+
+        }
     }
 }

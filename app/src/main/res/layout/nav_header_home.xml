@@ -37,11 +37,9 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:text="Telugu"
-
         android:gravity="center_vertical"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_subheading_size_16"
-        />
+        android:textSize="@dimen/text_subheading_size_16" />
 
         <ImageView
             android:layout_width="@dimen/nav_drawer_arro_width"
@@ -49,6 +47,7 @@
             android:src="@drawable/ic_play_arrow_white"/>
 
     </LinearLayout>
+
 
 
 
