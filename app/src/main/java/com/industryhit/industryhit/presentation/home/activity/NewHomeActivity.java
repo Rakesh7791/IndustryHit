@@ -219,8 +219,6 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
             category_name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                 //   callCategoryActivity(categoryList_data.get(final_I).getId());
                     callCategoryActivity(categoryList_data.get(final_I).getName(),categoryList_data.get(final_I).getId());
 
                 }
