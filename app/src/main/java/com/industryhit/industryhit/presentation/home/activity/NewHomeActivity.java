@@ -193,7 +193,6 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
                     categoryList_data= new Gson().fromJson(response, listType);
 
                     if (categoryList_data!=null&&categoryList_data.size()>0){
-
                         addCategoryList(categoryList_data);
                     }
 
@@ -205,13 +204,21 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     }
 
     private void addCategoryList(List<CategoryList_Data> categoryList_data) {
-
+        ((LinearLayout) findViewById(R.id.category_layout)).removeAllViews();
         for (int i=0;i<categoryList_data.size();i++){
             View view = getLayoutInflater().inflate(R.layout.category_item_layout, ((LinearLayout) findViewById(R.id.category_layout)), false);
             CustomTextView category_name = view.findViewById(R.id.category_name);
             if (GlobalMethods.isNull(categoryList_data.get(i).getName())){
                 category_name.setText(categoryList_data.get(i).getName());
             }
+
+            category_name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
              view.setTag(i);
             ((LinearLayout) findViewById(R.id.category_layout)).addView(view);
 
