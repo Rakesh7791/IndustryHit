@@ -18,6 +18,9 @@
             android:layout_gravity="right"
             android:src="@drawable/close_dark"/>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -88,7 +91,12 @@
                 android:textAllCaps="true"
                 android:gravity="center_horizontal"/>
 
-
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/btn_sign_in"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="20dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,6 +116,7 @@
                     android:background="@color/white"/>
 
                 <ImageView
+                    android:id="@+id/google_signin"
                     android:layout_width="@dimen/logo_width_50dp"
                     android:layout_height="@dimen/logo_height_50dp"
                     android:src="@drawable/google_logo"/>
@@ -140,6 +149,6 @@
             </LinearLayout>
         </LinearLayout>
 
-
+        </ScrollView>
     </LinearLayout>
 </RelativeLayout>

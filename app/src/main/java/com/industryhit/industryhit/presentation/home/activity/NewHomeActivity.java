@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
@@ -26,7 +27,10 @@ import com.industryhit.industryhit.R;
 import com.industryhit.industryhit.businesslogic.CategoryList_Data;
 import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView;
+import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextViewMedium;
 import com.industryhit.industryhit.presentation.login.activity.BaseActivity;
+import com.industryhit.industryhit.presentation.login.activity.Login_Activity;
+import com.industryhit.industryhit.presentation.login.activity.RegistrationAct;
 import com.industryhit.industryhit.presentation.selectlanguage.Select_LanguageAct;
 import com.industryhit.industryhit.webaccess.OnVolleyResponseListener;
 import com.industryhit.industryhit.webaccess.VolleyConnectionGET;
@@ -57,9 +61,11 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     @Override
     protected void initGUI() {
         initDrawaerView();
+        initSelectedLanguage();
         actionEvents();
 
     }
+
 
     private void actionEvents() {
         ((LinearLayout) findViewById(R.id.language_layout)).setOnClickListener(new View.OnClickListener() {
@@ -68,6 +74,41 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
                 callSelectLanguageAct();
             }
         });
+
+        ((CustomTextViewMedium)findViewById(R.id.signup)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callRegistrationAct();
+            }
+        });
+
+        ((LinearLayout)findViewById(R.id.selected_language_layout)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callSelectLanguageAct();
+            }
+        });
+    }
+
+
+    private void initSelectedLanguage() {
+
+       // Log.e("Languag",GlobalMethods.getSelectedLanguage(NewHomeActivity.this)+"");
+
+        if (GlobalMethods.getSelectedLanguage(NewHomeActivity.this)==1){
+            ((ImageView)findViewById(R.id.img_telugu)).setImageDrawable(getResources().getDrawable(R.drawable.telugu_red));
+            ((ImageView)findViewById(R.id.img_english)).setImageDrawable(getResources().getDrawable(R.drawable.english_black));
+
+        }else {
+            ((ImageView)findViewById(R.id.img_telugu)).setImageDrawable(getResources().getDrawable(R.drawable.telugu_black));
+            ((ImageView)findViewById(R.id.img_english)).setImageDrawable(getResources().getDrawable(R.drawable.english_red));
+        }
+    }
+
+    private void callRegistrationAct() {
+        GlobalMethods.callForWordActivity(NewHomeActivity.this, RegistrationAct.class, null, false, true);
+
     }
 
     private void callSelectLanguageAct() {
@@ -167,6 +208,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
                     Bundle bundle = data.getExtras();
                     if (bundle != null) {
                         if (bundle.containsKey("selectedLangualge")) {
+                            initSelectedLanguage();
                             callCategoriesService();
                             ((CustomTextView) findViewById(R.id.selected_language)).setText(bundle.getString("selectedLangualge"));
                         }

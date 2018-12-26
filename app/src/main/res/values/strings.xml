@@ -62,5 +62,9 @@
     <string name="this_field_required">This field required</string>
     <string name="please_enter_valid_email">Please enter valid email</string>
     <string name="please_enter_valid_phonenumber">Please enter valid phone number</string>
+    <string name="please_enter_valid_email_or_phonenumber">Please enter valid email or phone number</string>
+    <string name="welcome">Welcome</string>
+    <string name="language">Language</string>
+    <string name="loading">Loading</string>
 
 </resources>

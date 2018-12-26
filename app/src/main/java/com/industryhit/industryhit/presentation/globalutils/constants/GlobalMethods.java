@@ -1452,6 +1452,29 @@ public class GlobalMethods {
     public static int getSelectedLanguage(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(Constants.MY_PREFERENCE_NAME, Context.MODE_PRIVATE);
         return prefs.getInt(Constants.LANGUAGE_SELECTION, 1);
-
     }
+    public static boolean isInteger(String str) {
+        if (str == null) {
+            return false;
+        }
+        if (str.isEmpty()) {
+            return false;
+        }
+        int i = 0;
+        if (str.charAt(0) == '-') {
+            if (str.length() == 1) {
+                return false;
+            }
+            i = 1;
+        }
+        for (; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c < '0' || c > '9') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 }
