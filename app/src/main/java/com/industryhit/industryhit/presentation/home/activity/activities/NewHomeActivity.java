@@ -1,4 +1,4 @@
-package com.industryhit.industryhit.presentation.home.activity;
+package com.industryhit.industryhit.presentation.home.activity.activities;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -6,16 +6,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,19 +25,15 @@ import com.industryhit.industryhit.businesslogic.CategoryList_Data;
 import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextViewMedium;
+import com.industryhit.industryhit.presentation.home.activity.fragments.TabFragment;
 import com.industryhit.industryhit.presentation.login.activity.BaseActivity;
-import com.industryhit.industryhit.presentation.login.activity.Login_Activity;
 import com.industryhit.industryhit.presentation.login.activity.RegistrationAct;
 import com.industryhit.industryhit.presentation.selectlanguage.Select_LanguageAct;
 import com.industryhit.industryhit.webaccess.OnVolleyResponseListener;
 import com.industryhit.industryhit.webaccess.VolleyConnectionGET;
 import com.industryhit.industryhit.webaccess.WebServiceList;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 public class NewHomeActivity extends BaseActivity implements OnVolleyResponseListener {
@@ -137,7 +130,9 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
         mFragmentTransaction = mFragmentManager.beginTransaction();
         try {
             if (mFragmentTransaction != null) {
+                TabFragment tab = new TabFragment();
 
+                mFragmentTransaction.replace(R.id.containerViews, tab).commit();
             }
         } catch (Exception e) {
             // Log.e("", "");
@@ -172,6 +167,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
 
 
         mToolbarMorphDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
+
         mDrawerToggle.setHomeAsUpIndicator(mToolbarMorphDrawable);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         mDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {

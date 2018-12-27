@@ -1,7 +1,5 @@
 package com.industryhit.industryhit.presentation.login.activity;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -10,9 +8,7 @@ import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMeth
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomEditText;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextViewBold;
-import com.industryhit.industryhit.presentation.home.activity.CategoryActivity;
-import com.industryhit.industryhit.presentation.home.activity.HomeActivity;
-import com.industryhit.industryhit.presentation.home.activity.NewHomeActivity;
+import com.industryhit.industryhit.presentation.home.activity.activities.HomeActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

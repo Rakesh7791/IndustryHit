@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".presentation.home.activity.HomeActivity"
+            android:name=".presentation.home.activity.activities.HomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -38,10 +38,10 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".presentation.home.activity.NewHomeActivity"
+            android:name=".presentation.home.activity.activities.NewHomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".presentation.home.activity.CategoryActivity"
+            android:name=".presentation.home.activity.activities.CategoryActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"

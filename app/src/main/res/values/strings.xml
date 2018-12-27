@@ -66,5 +66,10 @@
     <string name="welcome">Welcome</string>
     <string name="language">Language</string>
     <string name="loading">Loading</string>
-
+    <string name="lates_news">Latest News</string>
+    <string name="my_account">My Account</string>
+    <string name="notifications">Notifications</string>
+    <string name="share">Share</string>
+    <string name="feedback">Feedback</string>
+    <string name="rate">Rate</string>
 </resources>

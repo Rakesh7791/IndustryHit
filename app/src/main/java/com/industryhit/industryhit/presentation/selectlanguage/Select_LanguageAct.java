@@ -1,15 +1,12 @@
 package com.industryhit.industryhit.presentation.selectlanguage;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.industryhit.industryhit.R;
 import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView;
-import com.industryhit.industryhit.presentation.home.activity.HomeActivity;
 import com.industryhit.industryhit.presentation.login.activity.BaseActivity;
-import com.industryhit.industryhit.presentation.splashscreen.SplashScreen_Act;
 
 public class Select_LanguageAct extends BaseActivity {
 

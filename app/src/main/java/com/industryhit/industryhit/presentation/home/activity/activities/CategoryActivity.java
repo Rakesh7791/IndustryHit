@@ -1,8 +1,6 @@
-package com.industryhit.industryhit.presentation.home.activity;
+package com.industryhit.industryhit.presentation.home.activity.activities;
 
 import android.app.ProgressDialog;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +11,6 @@ import android.widget.ImageView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.industryhit.industryhit.R;
-import com.industryhit.industryhit.businesslogic.CategoryList_Data;
 import com.industryhit.industryhit.businesslogic.model.CategoryData;
 import com.industryhit.industryhit.presentation.globalutils.adapter.CategoryAdapter;
 import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
@@ -24,7 +21,6 @@ import com.industryhit.industryhit.webaccess.VolleyConnectionGET;
 import com.industryhit.industryhit.webaccess.WebServiceList;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryActivity extends BaseActivity implements OnVolleyResponseListener {

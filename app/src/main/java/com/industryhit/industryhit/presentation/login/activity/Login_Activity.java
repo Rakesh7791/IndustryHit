@@ -3,23 +3,16 @@ package com.industryhit.industryhit.presentation.login.activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.industryhit.industryhit.R;
@@ -27,7 +20,7 @@ import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMeth
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomEditText;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextView;
 import com.industryhit.industryhit.presentation.globalutils.custom.CustomTextViewBold;
-import com.industryhit.industryhit.presentation.home.activity.NewHomeActivity;
+import com.industryhit.industryhit.presentation.home.activity.activities.NewHomeActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,22 +1,16 @@
-package com.industryhit.industryhit.presentation.home.activity;
+package com.industryhit.industryhit.presentation.home.activity.activities;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.industryhit.industryhit.R;
 import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
@@ -26,7 +20,7 @@ import com.industryhit.industryhit.presentation.navigationscreens.BoxOffice_Frag
 import com.industryhit.industryhit.presentation.navigationscreens.Exclusives_Fragment;
 import com.industryhit.industryhit.presentation.navigationscreens.Galleries_Fragment;
 import com.industryhit.industryhit.presentation.navigationscreens.Gossips_Fragment;
-import com.industryhit.industryhit.presentation.navigationscreens.HomeFragment;
+import com.industryhit.industryhit.presentation.home.activity.fragments.HomeFragment;
 import com.industryhit.industryhit.presentation.navigationscreens.Interviews_Fragment;
 import com.industryhit.industryhit.presentation.navigationscreens.News_Fragment;
 import com.industryhit.industryhit.presentation.navigationscreens.Reviews_Fragment;

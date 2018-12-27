@@ -1,14 +1,12 @@
 package com.industryhit.industryhit.presentation.splashscreen;
 
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.industryhit.industryhit.R;
 import com.industryhit.industryhit.presentation.globalutils.constants.GlobalMethods;
-import com.industryhit.industryhit.presentation.home.activity.HomeActivity;
-import com.industryhit.industryhit.presentation.home.activity.NewHomeActivity;
+import com.industryhit.industryhit.presentation.home.activity.activities.HomeActivity;
+import com.industryhit.industryhit.presentation.home.activity.activities.NewHomeActivity;
 import com.industryhit.industryhit.presentation.login.activity.BaseActivity;
 import com.industryhit.industryhit.presentation.login.activity.Login_Activity;
 
@@ -46,7 +44,7 @@ public class SplashScreen_Act extends BaseActivity {
             @Override
             public void run() {
 
-                GlobalMethods.callForWordActivity(SplashScreen_Act.this,Login_Activity.class,null,true,true);
+                GlobalMethods.callForWordActivity(SplashScreen_Act.this,NewHomeActivity.class,null,true,true);
             }
         }, SPLASH_TIME_OUT);
     }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.home.activity.fragments.TabFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.industryhit.industryhit.presentation.globalutils.custom.NonSwipeableViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tabs_layout">
+
+    </com.industryhit.industryhit.presentation.globalutils.custom.NonSwipeableViewPager>
+    <LinearLayout
+        android:id="@+id/tabs_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tab_height"
+            android:background="@color/black"
+            android:paddingTop="5dp"
+            app:tabGravity="fill"
+            app:tabBackground="@null"
+            app:tabIndicatorColor="@color/wallet_bg"
+            app:tabMode="fixed"
+            app:tabPaddingEnd="2dp"
+            app:tabPaddingStart="2dp"
+            app:tabSelectedTextColor="@color/wallet_bg"
+            app:tabTextColor="@color/white">
+
+        </android.support.design.widget.TabLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
