@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -92,10 +93,13 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
         if (GlobalMethods.getSelectedLanguage(NewHomeActivity.this)==1){
             ((ImageView)findViewById(R.id.img_telugu)).setImageDrawable(getResources().getDrawable(R.drawable.telugu_red));
             ((ImageView)findViewById(R.id.img_english)).setImageDrawable(getResources().getDrawable(R.drawable.english_black));
+            ((ImageView)findViewById(R.id.img_selected_language)).setImageDrawable(getResources().getDrawable(R.drawable.telugu_black));
 
         }else {
             ((ImageView)findViewById(R.id.img_telugu)).setImageDrawable(getResources().getDrawable(R.drawable.telugu_black));
             ((ImageView)findViewById(R.id.img_english)).setImageDrawable(getResources().getDrawable(R.drawable.english_red));
+            ((ImageView)findViewById(R.id.img_selected_language)).setImageDrawable(getResources().getDrawable(R.drawable.english_black));
+
         }
     }
 
@@ -162,7 +166,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
 //       final Drawable drawable = ResourcesCompat.getDrawable(getResources(),   R.drawable.ic_nav_icon, getApplication().getTheme());
 //        final Drawable drawable_back = ResourcesCompat.getDrawable(getResources(),   R.drawable.ic_back, getApplication().getTheme());
 
-        mToolbarMorphDrawable = new MaterialMenuDrawable(this, Color.WHITE,
+        mToolbarMorphDrawable = new MaterialMenuDrawable(this, R.color.grey,
                 MaterialMenuDrawable.Stroke.REGULAR);
 
 
@@ -198,6 +202,10 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            fragment.onActivityResult(requestCode, resultCode, data);
+        }
+
         switch (requestCode) {
             case (100):
                 if (resultCode == Activity.RESULT_OK) {
@@ -206,7 +214,7 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
                         if (bundle.containsKey("selectedLangualge")) {
                             initSelectedLanguage();
                             callCategoriesService();
-                            ((CustomTextView) findViewById(R.id.selected_language)).setText(bundle.getString("selectedLangualge"));
+                           // ((CustomTextView) findViewById(R.id.selected_language)).setText(bundle.getString("selectedLangualge"));
                         }
 
                     }

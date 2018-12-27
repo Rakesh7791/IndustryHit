@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.industryhit.industryhit.R;
 
 
-public class Notifications_Fragment extends Fragment {
+public class Notifications_Fragment extends HomeBaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -19,4 +19,8 @@ public class Notifications_Fragment extends Fragment {
         return inflater.inflate(R.layout.fragment_notifications, container, false);
     }
 
+    @Override
+    public void onTabSelected() {
+
+    }
 }

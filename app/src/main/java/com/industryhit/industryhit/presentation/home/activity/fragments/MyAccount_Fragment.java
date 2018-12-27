@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.industryhit.industryhit.R;
 
 
-public class MyAccount_Fragment extends Fragment {
+public class MyAccount_Fragment extends HomeBaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -20,4 +20,8 @@ public class MyAccount_Fragment extends Fragment {
     }
 
 
+    @Override
+    public void onTabSelected() {
+
+    }
 }

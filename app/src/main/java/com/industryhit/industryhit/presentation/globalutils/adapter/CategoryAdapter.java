@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.industryhit.industryhit.R;
 import com.industryhit.industryhit.businesslogic.model.CategoryData;
@@ -44,14 +45,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         try {
 
             if (GlobalMethods.isNull(categoryData.get(i).getTitle().getRendered())){
-                holder.title.setText(categoryData.get(i).getTitle().getRendered());
+                holder.title.setText(Html.fromHtml(Html.fromHtml(categoryData.get(i).getTitle().getRendered()).toString()));
             }
 
-//            if (GlobalMethods.isNull(categoryData.get(i).getContent().getRendered())){
-//                holder.content.setText(Html.fromHtml(Html.fromHtml(categoryData.get(i).getContent().getRendered()).toString()));
-//            }
+            if (GlobalMethods.isNull(categoryData.get(i).getContent().getRendered())){
+                holder.content.setText(Html.fromHtml(Html.fromHtml(categoryData.get(i).getContent().getRendered()).toString()));
+            }
+            if (GlobalMethods.isNull(categoryData.get(i).getDate())){
+                holder.date.setText(categoryData.get(i).getDate());
+            }
 
-
+            GlobalMethods.loadImage(context, null, "http://www.etelugumovies.com/wp-content/uploads/2015/10/Allu-Arjun-Multi-Starrer-Fi.jpg", holder.img_category, 0);
 
         } catch (Exception e) {
 
@@ -70,7 +74,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private CustomTextViewMedium title;
-        private CustomTextView content;
+        private CustomTextView content,date;
+        private ImageView img_category;
 
         //    private CustomTextViewSemiBold name;
 
@@ -79,6 +84,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
             title=(CustomTextViewMedium)itemView.findViewById(R.id.title);
             content=(CustomTextView)itemView.findViewById(R.id.content);
+            date=(CustomTextView)itemView.findViewById(R.id.date);
+            img_category=(ImageView)itemView.findViewById(R.id.img_category);
 
             itemView.setOnClickListener(this);
         }

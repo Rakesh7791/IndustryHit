@@ -51,8 +51,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/share"
-                    android:paddingLeft="@dimen/padding_50dp"
-                    android:paddingRight="@dimen/padding_50dp"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingRight="@dimen/padding_20dp"
                     style="@style/text_view_style"/>
                 <View
                     android:layout_width="match_parent"
@@ -62,8 +62,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/feedback"
-                    android:paddingLeft="@dimen/padding_50dp"
-                    android:paddingRight="@dimen/padding_50dp"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingRight="@dimen/padding_20dp"
                     style="@style/text_view_style"/>
                 <View
                     android:layout_width="match_parent"
@@ -73,8 +73,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rate"
-                    android:paddingLeft="@dimen/padding_50dp"
-                    android:paddingRight="@dimen/padding_50dp"
+                    android:paddingLeft="@dimen/padding_20dp"
+                    android:paddingRight="@dimen/padding_20dp"
                     style="@style/text_view_style"/>
             </LinearLayout>
 

@@ -9,7 +9,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/tool_bar_height"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:theme="@style/ToolbarTheme"
         app:contentInsetEnd="0dp"
         app:contentInsetLeft="0dp"
@@ -17,7 +17,7 @@
         app:contentInsetStart="0dp"
         app:contentInsetStartWithNavigation="0dp">
 
-        <include layout="@layout/toolbar_home" />
+        <include layout="@layout/new_toolbar_home" />
     </android.support.v7.widget.Toolbar>
 
 

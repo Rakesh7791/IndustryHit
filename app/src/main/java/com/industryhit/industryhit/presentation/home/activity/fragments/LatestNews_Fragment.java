@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.industryhit.industryhit.R;
 
 
-public class LatestNews_Fragment extends Fragment {
+public class LatestNews_Fragment extends HomeBaseFragment {
 
 
     @Override
@@ -22,4 +22,8 @@ public class LatestNews_Fragment extends Fragment {
     }
 
 
+    @Override
+    public void onTabSelected() {
+
+    }
 }

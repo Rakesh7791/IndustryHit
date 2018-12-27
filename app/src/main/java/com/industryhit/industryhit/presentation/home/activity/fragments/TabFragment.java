@@ -93,10 +93,10 @@ public class TabFragment extends BaseFragment {
                 Log.e("dasfasdf", "asdfas");
                 try {
 
-//                    HomeBaseFragment baseFragment = (HomeBaseFragment) getChildFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewpager + ":" + viewPager.getCurrentItem());
-//
-//                    if (baseFragment != null)
-//                        baseFragment.onTabSelected();
+                    HomeBaseFragment baseFragment = (HomeBaseFragment) getChildFragmentManager().findFragmentByTag("android:switcher:" + R.id.viewpager + ":" + viewPager.getCurrentItem());
+
+                    if (baseFragment != null)
+                        baseFragment.onTabSelected();
 
                 } catch (IndexOutOfBoundsException e) {
                 }
