@@ -187,7 +187,6 @@
     <dimen name="login_icon_height">150dp</dimen>
     <dimen name="padding_15dp">15dp</dimen>
 
-
     <dimen name="home_icon_width">20dp</dimen>
     <dimen name="home_icon_height">20dp</dimen>
 
