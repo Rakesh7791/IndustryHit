@@ -1,10 +1,12 @@
 package com.industryhit.industryhit.presentation.home.activity.fragments;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -136,10 +138,13 @@ public class HomeFragment extends HomeBaseFragment implements OnVolleyResponseLi
     private void addCategoryList(List<CategoryList_Data> categoryList_data, int position) {
 
         try {
+            if(tabLayout!=null){
+                tabLayout.removeAllTabs();
+            }
             for (int j = 0; j < categoryList_data.size(); j++) {
                 View tabView;
-
                 tabView = (View) LayoutInflater.from(getActivity()).inflate(R.layout.tab_layout, null);
+
 
                 ((CustomTextView) tabView.findViewById(R.id.tab)).setText(categoryList_data.get(j).getName());
 
@@ -170,7 +175,7 @@ public class HomeFragment extends HomeBaseFragment implements OnVolleyResponseLi
     public void onTabSelected() {
 
     }
-
+/*
     @Override
     public void onActivityResult(int reqCode, int resultCode, Intent data) {
         super.onActivityResult(reqCode, resultCode, data);
@@ -189,6 +194,30 @@ public class HomeFragment extends HomeBaseFragment implements OnVolleyResponseLi
             }
         }
 
+    }*/
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+
+        switch (requestCode) {
+            case (100):
+                if (resultCode == Activity.RESULT_OK) {
+                    Bundle bundle = data.getExtras();
+                    if (bundle != null) {
+                        if (bundle.containsKey("selectedLangualge")) {
+                            getCategoryList();
+                            // ((CustomTextView) findViewById(R.id.selected_language)).setText(bundle.getString("selectedLangualge"));
+                        }
+
+                    }
+
+
+                    break;
+                }
+        }
     }
     /*private void initSelectedLanguage() {
 

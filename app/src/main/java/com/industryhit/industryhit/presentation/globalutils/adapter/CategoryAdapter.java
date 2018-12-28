@@ -45,11 +45,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         try {
 
             if (GlobalMethods.isNull(categoryData.get(i).getTitle().getRendered())){
-                holder.title.setText(Html.fromHtml(Html.fromHtml(categoryData.get(i).getTitle().getRendered()).toString()));
+                holder.title.setText(Html.fromHtml(categoryData.get(i).getTitle().getRendered()).toString());
             }
 
             if (GlobalMethods.isNull(categoryData.get(i).getContent().getRendered())){
-                holder.content.setText(Html.fromHtml(Html.fromHtml(categoryData.get(i).getContent().getRendered()).toString()));
+                holder.content.setText(Html.fromHtml(categoryData.get(i).getContent().getRendered()).toString());
             }
             if (GlobalMethods.isNull(categoryData.get(i).getDate())){
                 holder.date.setText(categoryData.get(i).getDate());

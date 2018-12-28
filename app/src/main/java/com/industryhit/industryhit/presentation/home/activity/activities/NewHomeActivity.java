@@ -80,6 +80,22 @@ public class NewHomeActivity extends BaseActivity implements OnVolleyResponseLis
         ((LinearLayout)findViewById(R.id.selected_language_layout)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                closeDrawer();
+                callSelectLanguageAct();
+            }
+        });
+
+        ((ImageView)findViewById(R.id.ic_close)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                closeDrawer();
+            }
+        });
+
+        ((ImageView)findViewById(R.id.img_selected_language)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 callSelectLanguageAct();
             }
         });
